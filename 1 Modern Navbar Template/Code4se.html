@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9; /* Light background for a softer look */
+      color: #333; /* Neutral text color for body */
+      line-height: 1.6;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e293b; /* Rich dark blue-gray */
+      padding: 10px 20px;
+      color: #ffffff; /* White text for contrast */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4fc3f7; /* Bright blue for accent */
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin: 0 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff; /* White links for visibility */
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .nav-links a:hover {
+      color: #4fc3f7; /* Matches the logo for cohesion */
+      background-color: rgba(255, 255, 255, 0.1); /* Subtle highlight */
+      transform: translateY(-2px); /* Lift effect on hover */
+    }
+
+    /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #ffffff;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        background-color: #1e293b; /* Match navbar color */
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar.active .nav-links {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+
+    /* Button Styling */
+    .navbar .cta-button {
+      padding: 10px 20px;
+      background-color: #4fc3f7; /* Bright blue for action */
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar .cta-button:hover {
+      background-color: #039be5; /* Darker blue for hover */
+      transform: scale(1.05); /* Slightly enlarges on hover */
+    }
+
+    /* Search Bar */
+    .navbar .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .navbar .search-bar input {
+      padding: 5px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .navbar .search-bar input:focus {
+      border-color: #4fc3f7;
+    }
+
+    .navbar .search-bar button {
+      padding: 5px 10px;
+      background-color: #4fc3f7;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar .search-bar button:hover {
+      background-color: #039be5;
+    }
+
+    /* Responsive Search Bar */
+    @media screen and (max-width: 768px) {
+      .navbar .search-bar {
+        display: none;
+      }
+
+      .navbar.active .search-bar {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">BrandName</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

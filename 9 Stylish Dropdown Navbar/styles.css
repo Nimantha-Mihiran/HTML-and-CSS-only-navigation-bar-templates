@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navigation bar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.navbar ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Dropdown arrow indicator */
+.dropdown > a::after {
+    content: '▼';
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Dropdown menu */
+.navbar ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar ul li .dropdown li {
+    margin: 0;
+}
+
+.navbar ul li .dropdown li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+}
+
+.navbar ul li .dropdown li a:hover {
+    background-color: #555;
+}
+
+.navbar ul li:hover .dropdown {
+    display: block;
+}
+
+/* Search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    color: white;
+    padding: 5px;
+    outline: none;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-bar button:hover {
+    color: #00bcd4;
+}
+
+/* Call-to-action button */
+.navbar .cta {
+    background-color: #00bcd4;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.navbar .cta:hover {
+    background-color: #007b9e;
+}
